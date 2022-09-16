@@ -1,12 +1,13 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -21,20 +22,41 @@
                     <img src="~/Content/Img/Hubbell_Logo.png" height="50px" width="100px" />
                 </a>
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Acerca de", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
-                </ul>
-            </div>
+            <ul class="nav navbar-nav">
+                <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
+                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Recursos Humanos <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li>@Html.ActionLink("Empleado del mes", "#", "#")</li>
+                        <li>@Html.ActionLink("Vacantes", "#", "#")</li>
+                        <li>@Html.ActionLink("Tópicos", "#", "#")</li>
+                        <li>@Html.ActionLink("Cumpleaños", "#", "#")</li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Nuestros productos <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li>@Html.ActionLink("Above ground", "#", "#")</li>
+                        <li>@Html.ActionLink("Polymer", "#", "#")</li>
+                    </ul>
+                </li>
+                 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Mejora continua <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li>@Html.ActionLink("K3E", "#", "#")</li>
+                        <li>@Html.ActionLink("5's", "#", "#")</li>
+                        <li>@Html.ActionLink("Proyectos", "#", "#")</li>
+                        <li>@Html.ActionLink("Kaizen", "#", "#")</li>
+                        <li>@Html.ActionLink("Lean", "#", "#")</li>
+                        <li>@Html.ActionLink("Premiaciones", "#", "#")</li>
+                    </ul>
+                </li>
+                <li>@Html.ActionLink("Seguridad", "#", "#")</li>
+            </ul>
         </div>
     </div>
     <div class="container body-content">
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - Mi aplicación ASP.NET</p>
+            <p>&copy; @DateTime.Now.Year - Hubbell 2022</p>
         </footer>
     </div>
 
