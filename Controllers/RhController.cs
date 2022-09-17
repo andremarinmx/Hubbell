@@ -57,6 +57,29 @@ namespace Hubbell.Controllers
         }
 
         [HttpGet]
+        public ActionResult EditarEmpleadoMes(int id)
+        {
+            using (HubbellContext db = new HubbellContext())
+            {
+                EmpleadosMes empleadoMes = db.EmpleadosMes.Find(id);
+                return View(empleadoMes);
+            }
+        }
+
+        [HttpPost]
+        public ActionResult EditarEmpleadoMes(EmpleadosMes empleado)
+        {
+            using (HubbellContext db = new HubbellContext())
+            {
+                EmpleadosMes empleadoMes = db.EmpleadosMes.Find(empleado.Id);
+                empleadoMes.NumReloj = empleado.NumReloj;
+                empleadoMes.Fecha = empleado.Fecha;
+                db.SaveChanges();
+                return RedirectToAction("EmpleadosMes");
+            }
+        }
+
+        [HttpGet]
         public ActionResult AgregarImagen()
         {
             return View();
