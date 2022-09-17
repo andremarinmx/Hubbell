@@ -211,6 +211,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Rh\EmpleadosMes.cshtml" />
     <Content Include="Views\Rh\AgregarEmpleado.cshtml" />
+    <Content Include="Views\Rh\_ListadoFotos.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

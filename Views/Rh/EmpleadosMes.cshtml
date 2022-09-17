@@ -9,12 +9,13 @@
 <p>
     @Html.ActionLink("Agregar empleado", "AgregarEmpleado")
 </p>
+
 <input class="form-control text-box single-line"
        type="text"
-       id="input"
-       onkeyup="filtrar()"
-       placeholder="Ingresar fecha"
->
+       id="input2"
+       onkeyup="filtrar2()"
+       placeholder="Ingresar fecha">
+
 <p>
 <table class="table" id="table">
     <tr>
@@ -43,24 +44,4 @@
 }
 </table>
 
-<script type="text/javascript">
-    function filtrar() {
-        var fecha = document.getElementById("fecha");
-        var input, filter, table, tr, td, i, txtValue;
-        input = document.getElementById("input");
-        filter = input.value.toUpperCase();
-        table = document.getElementById("table");
-        tr = table.getElementsByTagName("tr");
-        for (i = 0; i < tr.length; i++) {
-            td = tr[i].getElementsByTagName("td")[1];
-            if (td) {
-                txtValue = td.textContent || td.innerText;
-                if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                    tr[i].style.display = "";
-                } else {
-                    tr[i].style.display = "none";
-                }
-            }
-        }
-    }
-</script>
+@Html.Partial("_ListadoFotos", (List<Hubbell.Models.FotoEmpleadosMes>)ViewBag.fotos)
