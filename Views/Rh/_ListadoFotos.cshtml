@@ -1,0 +1,60 @@
+﻿@model IEnumerable<Hubbell.Models.FotoEmpleadosMes>
+<table class="table" id="table2">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Img)
+        </th>
+        <th hidden>
+            @Html.DisplayNameFor(model => model.Fecha)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            <img src="@Html.DisplayFor(modelItem => item.Img)" height="200px" width="300px"/>            
+        </td>
+        <td hidden>
+            @Html.DisplayFor(modelItem => item.Fecha)"
+        </td>
+    </tr>
+}
+
+</table>
+
+<script type="text/javascript">
+    var input2, filter2, table2, tr2, td2, i2, txtValue2;
+    var input, filter, table, tr, td, i, txtValue;
+    function filtrar2() {
+        input2 = document.getElementById("input2");
+        filter2 = input2.value.toUpperCase();
+        table2 = document.getElementById("table2");
+        tr2 = table2.getElementsByTagName("tr");
+        for (i2 = 0; i2 < tr2.length; i2++) {
+            td2 = tr2[i2].getElementsByTagName("td")[1];
+            if (td2) {
+                txtValue2 = td2.textContent || td2.innerText;
+                if (txtValue2.toUpperCase().indexOf(filter2) > -1) {
+                    tr2[i2].style.display = "";
+                } else {
+                    tr2[i2].style.display = "none";
+                }
+            }
+        }
+        input = document.getElementById("input2");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("table");
+        tr = table.getElementsByTagName("tr");
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[1];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+</script>

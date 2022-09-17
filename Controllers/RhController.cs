@@ -15,6 +15,8 @@ namespace Hubbell.Controllers
             using (HubbellContext db = new HubbellContext())
             {   
                 var empleados = db.EmpleadosMes.OrderBy(x => x.NumReloj).ToList();
+                var fotos = db.FotoEmpleadosMes.ToList();
+                ViewBag.fotos = fotos;
                 return View(empleados);
             }
               
