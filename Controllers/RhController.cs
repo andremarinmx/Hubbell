@@ -44,6 +44,19 @@ namespace Hubbell.Controllers
         }
 
         [HttpGet]
+        public ActionResult EliminarEmpleadoMes(int id)
+        {
+            using (HubbellContext db = new HubbellContext())
+            {
+                var empleados = db.EmpleadosMes.OrderBy(x => x.Fecha).ToList();
+                EmpleadosMes empleadoMes = db.EmpleadosMes.Find(id);
+                db.EmpleadosMes.Remove(empleadoMes);
+                db.SaveChanges();
+                return RedirectToAction("EmpleadosMes", empleados);
+            }
+        }
+
+        [HttpGet]
         public ActionResult AgregarImagen()
         {
             return View();
@@ -59,6 +72,18 @@ namespace Hubbell.Controllers
                 foto.Fecha = fecha;
                 foto.Img = fotografia;
                 db.FotoEmpleadosMes.Add(foto);
+                db.SaveChanges();
+                return RedirectToAction("EmpleadosMes");
+            }
+        }
+
+        [HttpGet]
+        public ActionResult EliminarFotoEmpleadoMes(int id)
+        {
+            using (HubbellContext db = new HubbellContext())
+            {
+                FotoEmpleadosMes foto = db.FotoEmpleadosMes.Find(id);
+                db.FotoEmpleadosMes.Remove(foto);
                 db.SaveChanges();
                 return RedirectToAction("EmpleadosMes");
             }
