@@ -1,35 +1,23 @@
 ﻿@model IEnumerable<Hubbell.Models.EmpleadosMes>
 
-<table class="table" id="table">
-    <tr>
-    </tr>
-    <tr>
-        <td>
-            @{
-                ViewBag.Title = "EmpleadosMes";
-            }
+@{
+    ViewBag.Title = "EmpleadosMes";
+}
 
-            <h2>Empleados del mes</h2>
+<h2>Empleados del mes</h2>
 
-            <p>
-                @Html.ActionLink("Agregar empleado", "AgregarEmpleado")  |  @Html.ActionLink("Agregar imagen", "AgregarImagen")
-            </p>
+<p>
+    @Html.ActionLink("Agregar empleado", "AgregarEmpleado")  |  @Html.ActionLink("Agregar imagen", "AgregarImagen")
+</p>
 
-            <h3>Filtrar búsqueda</h3>
-            <input class="form-control text-box single-line"
-                   type="text"
-                   id="input2"
-                   onkeyup="filtrar2()"
-                   placeholder="Ingresar fecha">
+<h3>Filtrar búsqueda</h3>
+<input class="form-control text-box single-line"
+       type="text"
+       id="input2"
+       onkeyup="filtrar2()"
+       placeholder="Ingresar fecha">
 
-            <p>
-        </td>
-        <td>
-            <img src="~/Content/Img/Empleado_Mes_Logo.png" height="200" width="200" />
-        </td>
-    </tr>
-
-</table>
+<img src="~/Content/Img/Empleado_Mes_Logo.png" style="position: absolute; right: 5%; top: 7%; display: block; height: 125px; width: 125px; "/>
 
 
 <table class="table" id="table">
@@ -43,20 +31,21 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.NumReloj)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Fecha)
-        </td>
-        <td>
-            @Html.ActionLink("Editar", "EditaEmpleadoMes", new { id=item.Id }) |
-            @Html.ActionLink("Eliminar", "EliminarEmpleadoMes", new { id=item.Id })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumReloj)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fecha)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "EditaEmpleadoMes", new { id = item.Id }) |
+                @Html.ActionLink("Eliminar", "EliminarEmpleadoMes", new { id = item.Id })
+            </td>
+        </tr>
+    }
 </table>
 
 @Html.Partial("_ListadoFotos", (List<Hubbell.Models.FotoEmpleadosMes>)ViewBag.fotos)
