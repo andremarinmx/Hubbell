@@ -29,7 +29,7 @@ namespace Hubbell.Controllers
         }
 
         [HttpPost]
-        public ActionResult AgregarEmpleado(int numReloj, DateTime fecha)
+        public ActionResult AgregarEmpleado(int numReloj, string fecha)
         {
             using (HubbellContext db = new HubbellContext())
             {
@@ -63,7 +63,7 @@ namespace Hubbell.Controllers
         }
 
         [HttpPost]
-        public ActionResult AgregarImagen(DateTime fecha, string fotografia)
+        public ActionResult AgregarImagen(string fecha, string fotografia)
         {
             using (HubbellContext db = new HubbellContext())
             {

@@ -16,6 +16,6 @@ namespace Hubbell.Models
     {
         public int Id { get; set; }
         public string Img { get; set; }
-        public Nullable<System.DateTime> Fecha { get; set; }
+        public string Fecha { get; set; }
     }
 }
