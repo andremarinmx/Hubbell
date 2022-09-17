@@ -2,20 +2,25 @@
 <table class="table" id="table2">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Img)
+            Imágen
+            @*@Html.DisplayNameFor(model => model.Img)*@
         </th>
-        <th hidden>
+        <th>
             @Html.DisplayNameFor(model => model.Fecha)
         </th>
+        <th></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
         <td>
-            <img src="@Html.DisplayFor(modelItem => item.Img)" height="200px" width="300px"/>            
+            <img src="@Html.DisplayFor(modelItem => item.Img)" height="300" width="600"/>           
         </td>
-        <td hidden>
-            @Html.DisplayFor(modelItem => item.Fecha)"
+            <td >
+            @Html.DisplayFor(modelItem => item.Fecha)
+        </td>
+        <td>
+            @Html.ActionLink("Eliminar", "EliminarEmpleadoMes", new { id = item.Id })
         </td>
     </tr>
 }

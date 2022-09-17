@@ -1,22 +1,37 @@
 ﻿@model IEnumerable<Hubbell.Models.EmpleadosMes>
 
-@{
-    ViewBag.Title = "EmpleadosMes";
-}
+<table class="table" id="table">
+    <tr>
+    </tr>
+    <tr>
+        <td>
+            @{
+                ViewBag.Title = "EmpleadosMes";
+            }
 
-<h2>Empleados del mes</h2>
+            <h2>Empleados del mes</h2>
 
-<p>
-    @Html.ActionLink("Agregar empleado", "AgregarEmpleado")
-</p>
+            <p>
+                @Html.ActionLink("Agregar empleado", "AgregarEmpleado")  |  @Html.ActionLink("Agregar imagen", "AgregarImagen")
+            </p>
 
-<input class="form-control text-box single-line"
-       type="text"
-       id="input2"
-       onkeyup="filtrar2()"
-       placeholder="Ingresar fecha">
+            <h3>Filtrar búsqueda</h3>
+            <input class="form-control text-box single-line"
+                   type="text"
+                   id="input2"
+                   onkeyup="filtrar2()"
+                   placeholder="Ingresar fecha">
 
-<p>
+            <p>
+        </td>
+        <td>
+            <img src="~/Content/Img/Empleado_Mes_Logo.png" height="200" width="200" />
+        </td>
+    </tr>
+
+</table>
+
+
 <table class="table" id="table">
     <tr>
         <th>
