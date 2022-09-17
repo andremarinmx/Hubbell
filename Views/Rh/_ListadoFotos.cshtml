@@ -14,7 +14,9 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            <img src="@Html.DisplayFor(modelItem => item.Img)" height="300" width="600"/>           
+            <div class="logo">
+                <img src="@Html.DisplayFor(modelItem => item.Img)"  />
+            </div>
         </td>
             <td >
             @Html.DisplayFor(modelItem => item.Fecha)

@@ -1,4 +1,14 @@
-﻿@model IEnumerable<Hubbell.Models.EmpleadosMes>
+﻿<style>
+    img{
+        border-radius: 6px;
+    }
+    .logo img {
+        max-width: 25%;
+        height: auto;
+    }
+</style>
+
+@model IEnumerable<Hubbell.Models.EmpleadosMes>
 
 @{
     ViewBag.Title = "EmpleadosMes";
@@ -19,6 +29,7 @@
 
 <img src="~/Content/Img/Empleado_Mes_Logo.png" style="position: absolute; right: 5%; top: 7%; display: block; height: 125px; width: 125px; "/>
 
+<p></p>
 
 <table class="table" id="table">
     <tr>
