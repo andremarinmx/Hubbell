@@ -1,0 +1,31 @@
+﻿@using (Html.BeginForm("AgregarEmpleado", "Rh"))
+{
+    <div class="form-horizontal">
+
+        <h1>Agregar empleado</h1>
+        <h4 style="color:#0094ff;"><strong>Favor de introducir la información solicitada</strong></h4>
+
+        <div class="form-group row">
+            <label class="control-label col-md-3">Número de reloj</label>
+            <div class="col-md-9">
+                <input class="form-control text-box single-line" name="numReloj" type="number" required="required" />
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="control-label col-md-3">Fecha</label>
+            <div class="col-md-9">
+                <input class="form-control text-box single-line" name="fecha" type="date" required="required"/>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="control-label col-md-3"></label>
+            <div class="col-md-9">
+                <input type="submit" class="btn btn-success" value="Guardar" />
+            </div>
+        </div>
+
+    </div>
+
+}
