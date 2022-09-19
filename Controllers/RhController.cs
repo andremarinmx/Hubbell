@@ -181,5 +181,50 @@ namespace Hubbell.Controllers
                 }
             }
         }
+
+        [HttpGet]
+        public ActionResult Topicos()
+        {
+            using (HubbellContext db = new HubbellContext())
+            {
+                var topicos = db.Topicos.OrderBy(x => x.Fecha).ToList();
+                return View(topicos);
+            }
+
+        }
+
+        [HttpGet]
+        public ActionResult CrearTopico()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult CrearTopico(string fotografia)
+        {
+            using (HubbellContext db = new HubbellContext())
+            {
+                var now = DateTime.Now.ToString("yyyy-MM-dd");
+                var topicos = db.Topicos.OrderBy(x => x.Fecha).ToList();
+                Topicos topico = new Topicos();
+                topico.Img = fotografia;
+                topico.Fecha = now;
+                db.Topicos.Add(topico);
+                db.SaveChanges();
+                return RedirectToAction("Topicos");
+            }
+        }
+
+        [HttpGet]
+        public ActionResult EliminarTopico(int id, string planta)
+        {
+            using (HubbellContext db = new HubbellContext())
+            {
+                Topicos topico = db.Topicos.Find(id);
+                db.Topicos.Remove(topico);
+                db.SaveChanges();
+                return RedirectToAction("Topicos");
+            }
+        }
     }
 }

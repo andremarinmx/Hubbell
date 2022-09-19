@@ -151,6 +151,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Topicos.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Vacantes.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -218,6 +221,8 @@
     <Content Include="Views\Rh\VacantesPlanta1.cshtml" />
     <Content Include="Views\Rh\VacantesPlanta2.cshtml" />
     <Content Include="Views\Rh\CrearVacante.cshtml" />
+    <Content Include="Views\Rh\Topicos.cshtml" />
+    <Content Include="Views\Rh\CrearTopico.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

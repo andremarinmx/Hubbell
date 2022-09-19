@@ -1,0 +1,44 @@
+﻿@using (Html.BeginForm("CrearTopico", "Rh"))
+{
+    <div class="form-horizontal">
+
+        <h1>Crear tópico</h1>
+        <h4 style="color:#0094ff;"><strong>Favor de introducir la información solicitada</strong></h4>
+
+        <div class="form-group row">
+            <label class="control-label col-md-3" for="Fotografía">Fotografía</label>
+            <div class="col-md-9">
+                <input class="form-control text-box single-line" required="required" type="file" onchange="imagenAbase64(this)" accept="image/png, image/jpeg, image/jpg" />
+            </div>
+        </div>
+
+        <div class="form-group row" hidden>
+            <label class="control-label col-md-3" for="Fotografía">Fotografía</label>
+            <div class="col-md-9">
+                <input class="form-control text-box single-line" id="fotografia" type="text" name="fotografia" />
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="control-label col-md-3"></label>
+            <div class="col-md-9">
+                <input type="submit" class="btn btn-success" value="Guardar" />
+            </div>
+        </div>
+
+    </div>
+}
+
+<script type="text/javascript">
+    let imagenbase64 = "";
+    let foto = document.getElementById("fotografia");
+    function imagenAbase64(element) {
+        var file = element.files[0];
+        var reader = new FileReader();
+        reader.onloadend = function () {
+            imagebase64 = reader.result;
+            foto.value = imagebase64;
+        }
+        reader.readAsDataURL(file);
+    }
+</script>
