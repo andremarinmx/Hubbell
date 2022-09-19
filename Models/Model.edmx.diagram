@@ -5,9 +5,10 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="6efc3fce7f5c40199bcb77556c022e28" Name="Diagram1">
-        <EntityTypeShape EntityType="HubbellModel.EmpleadosMes" Width="1.5" PointX="0.75" PointY="0.75" />
-        <EntityTypeShape EntityType="HubbellModel.FotoEmpleadosMes" Width="1.5" PointX="2.75" PointY="0.75" />
-        <EntityTypeShape EntityType="HubbellModel.Vacantes" Width="1.5" PointX="0.75" PointY="2.75" />
+        <EntityTypeShape EntityType="HubbellModel.EmpleadosMes" Width="1.5" PointX="0.5" PointY="0.75" />
+        <EntityTypeShape EntityType="HubbellModel.FotoEmpleadosMes" Width="1.5" PointX="2.125" PointY="0.75" />
+        <EntityTypeShape EntityType="HubbellModel.Vacantes" Width="1.5" PointX="3.75" PointY="0.75" />
+        <EntityTypeShape EntityType="HubbellModel.Topicos" Width="1.5" PointX="5.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

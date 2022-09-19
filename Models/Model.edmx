@@ -21,6 +21,14 @@
           <Property Name="Img" Type="varchar(max)" />
           <Property Name="Fecha" Type="varchar" MaxLength="10" />
         </EntityType>
+        <EntityType Name="Topicos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Img" Type="varchar(max)" />
+          <Property Name="Fecha" Type="varchar" MaxLength="10" />
+        </EntityType>
         <EntityType Name="Vacantes">
           <Key>
             <PropertyRef Name="Id" />
@@ -33,6 +41,7 @@
         <EntityContainer Name="HubbellModelStoreContainer">
           <EntitySet Name="EmpleadosMes" EntityType="Self.EmpleadosMes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="FotoEmpleadosMes" EntityType="Self.FotoEmpleadosMes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Topicos" EntityType="Self.Topicos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Vacantes" EntityType="Self.Vacantes" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -43,6 +52,7 @@
           <EntitySet Name="EmpleadosMes" EntityType="HubbellModel.EmpleadosMes" />
           <EntitySet Name="FotoEmpleadosMes" EntityType="HubbellModel.FotoEmpleadosMes" />
           <EntitySet Name="Vacantes" EntityType="HubbellModel.Vacantes" />
+          <EntitySet Name="Topicos" EntityType="HubbellModel.Topicos" />
         </EntityContainer>
         <EntityType Name="EmpleadosMes">
           <Key>
@@ -68,6 +78,14 @@
           <Property Name="Img" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="Fecha" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="Planta" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Topicos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Img" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Fecha" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
         </EntityType>
         </Schema>
     </edmx:ConceptualModels>
@@ -97,6 +115,15 @@
             <EntityTypeMapping TypeName="HubbellModel.Vacantes">
               <MappingFragment StoreEntitySet="Vacantes">
                 <ScalarProperty Name="Planta" ColumnName="Planta" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Img" ColumnName="Img" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Topicos">
+            <EntityTypeMapping TypeName="HubbellModel.Topicos">
+              <MappingFragment StoreEntitySet="Topicos">
                 <ScalarProperty Name="Fecha" ColumnName="Fecha" />
                 <ScalarProperty Name="Img" ColumnName="Img" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
