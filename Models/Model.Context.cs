@@ -27,5 +27,6 @@ namespace Hubbell.Models
     
         public virtual DbSet<EmpleadosMes> EmpleadosMes { get; set; }
         public virtual DbSet<FotoEmpleadosMes> FotoEmpleadosMes { get; set; }
+        public virtual DbSet<Vacantes> Vacantes { get; set; }
     }
 }
