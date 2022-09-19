@@ -111,5 +111,75 @@ namespace Hubbell.Controllers
                 return RedirectToAction("EmpleadosMes");
             }
         }
+
+        [HttpGet]
+        public ActionResult VacantesPlanta1()
+        {
+            using (HubbellContext db = new HubbellContext())
+            {
+                var vacantes = db.Vacantes.Where(x => x.Planta == "Planta1").ToList().OrderBy(x => x.Fecha);
+                return View(vacantes);
+            }
+
+        }
+
+        [HttpGet]
+        public ActionResult VacantesPlanta2()
+        {
+            using (HubbellContext db = new HubbellContext())
+            {
+                var vacantes = db.Vacantes.Where(x => x.Planta == "Planta2").ToList().OrderBy(x => x.Fecha);
+                return View(vacantes);
+            }
+
+        }
+
+        [HttpGet]
+        public ActionResult CrearVacante()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult CrearVacante(string fotografia, string fecha, string planta)
+        {
+            using (HubbellContext db = new HubbellContext())
+            {
+                var vacantes = db.Vacantes.OrderBy(x => x.Fecha).ToList();
+                Vacantes vacante = new Vacantes();
+                vacante.Img = fotografia;
+                vacante.Fecha = fecha;
+                vacante.Planta = planta;
+                db.Vacantes.Add(vacante);
+                db.SaveChanges();
+                if(planta == "Planta1")
+                {
+                    return RedirectToAction("VacantesPlanta1", vacantes);
+                }
+                else
+                {
+                    return RedirectToAction("VacantesPlanta2", vacantes);
+                }
+            }
+        }
+
+        [HttpGet]
+        public ActionResult EliminarVacante(int id, string planta)
+        {
+            using (HubbellContext db = new HubbellContext())
+            {
+                Vacantes Vacante = db.Vacantes.Find(id);
+                db.Vacantes.Remove(Vacante);
+                db.SaveChanges();
+                if (planta == "Planta1")
+                {
+                    return RedirectToAction("VacantesPlanta1");
+                }
+                else
+                {
+                    return RedirectToAction("VacantesPlanta2");
+                }
+            }
+        }
     }
 }

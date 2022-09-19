@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Hubbell.Models.Vacantes>
+
+@{
+    ViewBag.Title = "VacantesPlanta2";
+}
+
+<h2>Vacantes Planta 2</h2>
+
+<p>
+    @Html.ActionLink("Crear vacante", "CrearVacante") | @Html.ActionLink("Planta 1", "VacantesPlanta1")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Img)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fecha)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <img src="@Html.DisplayFor(modelItem => item.Img)" style="max-width: 75%; height: auto; border-radius: 6px;"/>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fecha)
+            </td>
+            <td>
+                @Html.ActionLink("Eliminar", "EliminarVacante", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>
