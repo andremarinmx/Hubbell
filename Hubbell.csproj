@@ -164,6 +164,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\carrusel.css" />
     <Content Include="Content\Img\Empleado_Mes_Logo.png" />
     <Content Include="Content\Img\Hubbell_Logo.png" />
     <Content Include="Content\_Layout.css" />
@@ -223,6 +224,7 @@
     <Content Include="Views\Rh\CrearVacante.cshtml" />
     <Content Include="Views\Rh\Topicos.cshtml" />
     <Content Include="Views\Rh\CrearTopico.cshtml" />
+    <Content Include="Views\Rh\TopicosCarrusel.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

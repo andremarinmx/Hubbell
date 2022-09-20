@@ -194,6 +194,17 @@ namespace Hubbell.Controllers
         }
 
         [HttpGet]
+        public ActionResult TopicosCarrusel()
+        {
+            using (HubbellContext db = new HubbellContext())
+            {
+                var topicos = db.Topicos.OrderBy(x => x.Fecha).ToList();
+                return View(topicos);
+            }
+
+        }
+
+        [HttpGet]
         public ActionResult CrearTopico()
         {
             return View();
