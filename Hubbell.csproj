@@ -126,6 +126,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\NuestrosProductosController.cs" />
     <Compile Include="Controllers\RhController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -165,8 +166,15 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\carrusel.css" />
+    <Content Include="Content\Img\aluminio.jpg" />
+    <Content Include="Content\Img\boxpad.jpg" />
+    <Content Include="Content\Img\clientes.png" />
+    <Content Include="Content\Img\drops.jpg" />
     <Content Include="Content\Img\Empleado_Mes_Logo.png" />
+    <Content Include="Content\Img\hotbox.jpg" />
+    <Content Include="Content\Img\HotBoxFibra.jpg" />
     <Content Include="Content\Img\Hubbell_Logo.png" />
+    <Content Include="Content\Img\pedestales.jpg" />
     <Content Include="Content\_Layout.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -225,6 +233,12 @@
     <Content Include="Views\Rh\Topicos.cshtml" />
     <Content Include="Views\Rh\CrearTopico.cshtml" />
     <Content Include="Views\Rh\TopicosCarrusel.cshtml" />
+    <Content Include="Views\NuestrosProductos\AboveGround.cshtml" />
+    <Content Include="Views\NuestrosProductos\Pedestales.cshtml" />
+    <Content Include="Views\NuestrosProductos\HotBoxMetal.cshtml" />
+    <Content Include="Views\NuestrosProductos\HotBoxFibra.cshtml" />
+    <Content Include="Views\NuestrosProductos\NuestrosClientes.cshtml" />
+    <Content Include="Views\NuestrosProductos\BoxPad.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
