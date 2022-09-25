@@ -9,6 +9,7 @@
         <EntityTypeShape EntityType="HubbellModel.FotoEmpleadosMes" Width="1.5" PointX="2.125" PointY="0.75" />
         <EntityTypeShape EntityType="HubbellModel.Vacantes" Width="1.5" PointX="3.75" PointY="0.75" />
         <EntityTypeShape EntityType="HubbellModel.Topicos" Width="1.5" PointX="5.375" PointY="0.75" />
+        <EntityTypeShape EntityType="HubbellModel.MejoraContinuaProyectos" Width="1.5" PointX="0.5" PointY="2.5" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -126,6 +126,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MejoraContinuaController.cs" />
     <Compile Include="Controllers\NuestrosProductosController.cs" />
     <Compile Include="Controllers\RhController.cs" />
     <Compile Include="Global.asax.cs">
@@ -135,6 +136,9 @@
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\FotoEmpleadosMes.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MejoraContinuaProyectos.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Model.Context.cs">
@@ -245,6 +249,8 @@
     <Content Include="Views\NuestrosProductos\PAD.cshtml" />
     <Content Include="Views\NuestrosProductos\CorrugatedBoxes.cshtml" />
     <Content Include="Views\NuestrosProductos\Covers.cshtml" />
+    <Content Include="Views\MejoraContinua\Proyectos.cshtml" />
+    <Content Include="Views\MejoraContinua\CrearProyecto.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

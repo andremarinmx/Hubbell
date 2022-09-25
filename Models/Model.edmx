@@ -21,6 +21,25 @@
           <Property Name="Img" Type="varchar(max)" />
           <Property Name="Fecha" Type="varchar" MaxLength="10" />
         </EntityType>
+        <EntityType Name="MejoraContinuaProyectos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Titulo" Type="varchar" MaxLength="50" />
+          <Property Name="Categoria" Type="varchar" MaxLength="50" />
+          <Property Name="Integrantes" Type="varchar" MaxLength="200" />
+          <Property Name="RecoleccionDatos" Type="varchar" MaxLength="500" />
+          <Property Name="SituacionActualFoto" Type="varchar(max)" />
+          <Property Name="CausaPotencial" Type="varchar" MaxLength="150" />
+          <Property Name="CausaRaiz" Type="varchar" MaxLength="50" />
+          <Property Name="MedidasMejora" Type="varchar" MaxLength="50" />
+          <Property Name="FechaInicio" Type="varchar" MaxLength="10" />
+          <Property Name="ResultadoFoto" Type="varchar(max)" />
+          <Property Name="Beneficios" Type="varchar" MaxLength="500" />
+          <Property Name="Comentarios" Type="varchar" MaxLength="500" />
+          <Property Name="FechaCierre" Type="varchar" MaxLength="10" />
+        </EntityType>
         <EntityType Name="Topicos">
           <Key>
             <PropertyRef Name="Id" />
@@ -41,6 +60,7 @@
         <EntityContainer Name="HubbellModelStoreContainer">
           <EntitySet Name="EmpleadosMes" EntityType="Self.EmpleadosMes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="FotoEmpleadosMes" EntityType="Self.FotoEmpleadosMes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MejoraContinuaProyectos" EntityType="Self.MejoraContinuaProyectos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Topicos" EntityType="Self.Topicos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Vacantes" EntityType="Self.Vacantes" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
@@ -53,6 +73,7 @@
           <EntitySet Name="FotoEmpleadosMes" EntityType="HubbellModel.FotoEmpleadosMes" />
           <EntitySet Name="Vacantes" EntityType="HubbellModel.Vacantes" />
           <EntitySet Name="Topicos" EntityType="HubbellModel.Topicos" />
+          <EntitySet Name="MejoraContinuaProyectos" EntityType="HubbellModel.MejoraContinuaProyectos" />
         </EntityContainer>
         <EntityType Name="EmpleadosMes">
           <Key>
@@ -86,6 +107,25 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Img" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="Fecha" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="MejoraContinuaProyectos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Titulo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Categoria" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Integrantes" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="RecoleccionDatos" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="SituacionActualFoto" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CausaPotencial" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="CausaRaiz" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MedidasMejora" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FechaInicio" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="ResultadoFoto" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Beneficios" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Comentarios" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="FechaCierre" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
         </EntityType>
         </Schema>
     </edmx:ConceptualModels>
@@ -126,6 +166,26 @@
               <MappingFragment StoreEntitySet="Topicos">
                 <ScalarProperty Name="Fecha" ColumnName="Fecha" />
                 <ScalarProperty Name="Img" ColumnName="Img" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MejoraContinuaProyectos">
+            <EntityTypeMapping TypeName="HubbellModel.MejoraContinuaProyectos">
+              <MappingFragment StoreEntitySet="MejoraContinuaProyectos">
+                <ScalarProperty Name="FechaCierre" ColumnName="FechaCierre" />
+                <ScalarProperty Name="Comentarios" ColumnName="Comentarios" />
+                <ScalarProperty Name="Beneficios" ColumnName="Beneficios" />
+                <ScalarProperty Name="ResultadoFoto" ColumnName="ResultadoFoto" />
+                <ScalarProperty Name="FechaInicio" ColumnName="FechaInicio" />
+                <ScalarProperty Name="MedidasMejora" ColumnName="MedidasMejora" />
+                <ScalarProperty Name="CausaRaiz" ColumnName="CausaRaiz" />
+                <ScalarProperty Name="CausaPotencial" ColumnName="CausaPotencial" />
+                <ScalarProperty Name="SituacionActualFoto" ColumnName="SituacionActualFoto" />
+                <ScalarProperty Name="RecoleccionDatos" ColumnName="RecoleccionDatos" />
+                <ScalarProperty Name="Integrantes" ColumnName="Integrantes" />
+                <ScalarProperty Name="Categoria" ColumnName="Categoria" />
+                <ScalarProperty Name="Titulo" ColumnName="Titulo" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
