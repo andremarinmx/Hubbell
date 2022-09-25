@@ -1,0 +1,115 @@
+﻿@using (Html.BeginForm("CrearProyecto", "MejoraContinua"))
+{
+    <div class="form-horizontal">
+
+        <h1>Crear proyecto</h1>
+        <h4 style="color:#0094ff;"><strong>Favor de introducir la información solicitada</strong></h4>
+
+        <div class="form-group row">
+            <label class="control-label col-md-3">Título</label>
+            <div class="col-md-9">
+                <input class="form-control text-box single-line" name="titulo" type="text" required="required" />
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="control-label col-md-3" for="Categorías">Categorías</label>
+            <div class="col-md-9">
+                <select name="categorias" class="form-control text-box single-line" required="required">
+                    <option value="">Elige una opción</option>
+                    <option value="Mejora de la calidad">Mejora de la calidad</option>
+                    <option value="Salud y seguridad">Salud y seguridad</option>
+                    <option value="Medio Ambiente">Medio Ambiente</option>
+                    <option value="Productividad ">Productividad </option>
+                    <option value="Procesos de linea">Procesos de línea</option>
+                    <option value="Mejora del diseño del producto">Planta2</option>
+                    <option value="Planta2">Mejora del diseño del producto</option>
+                    <option value="Mejora del servicio">Mejora del servicio</option>
+                    <option value="Otro">Otro</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="control-label col-md-3">Integrantes</label>
+            <div class="col-md-9">
+                <textarea placeholder="Eje: Juan Mtz, María Flores, Victor Solis, etc..." class="form-control" name="integrantes" required="required"></textarea>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="control-label col-md-3">Recolección de los Datos</label>
+            <div class="col-md-9">
+                <textarea placeholder="Describir cómo se va a resolver" class="form-control" name="recolecionDatos" required="required"></textarea>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="control-label col-md-3">
+                ¿Cuál es la causa potencial?
+            </label>
+            <div class="col-md-9">
+                <input class="form-control text-box single-line" name="causaPotencial" type="text" required="required" />
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="control-label col-md-3" for="Causa raíz">Causa raíz</label>
+            <div class="col-md-9">
+                <select name="causaRaiz" class="form-control text-box single-line" required="required">
+                    <option value="">Elige una opción</option>
+                    <option value="Defectos">Defectos</option>
+                    <option value="Sobreproducción">Sobreproducción</option>
+                    <option value="Talento no utilizado">Talento no utilizado</option>
+                    <option value="Transporte">Transporte</option>
+                    <option value="Inventario">Inventario</option>
+                    <option value="Otro">Otro</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="control-label col-md-3">Fecha Inicio</label>
+            <div class="col-md-9">
+                <input class="form-control text-box single-line" name="fechaInicio" type="date" required="required" />
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="control-label col-md-3" for="Fotografía">Situación actual (imagen)</label>
+            <div class="col-md-9">
+                <input class="form-control text-box single-line" required="required" type="file" onchange="imagenAbase64(this)" accept="image/png, image/jpeg, image/jpg" />
+            </div>
+        </div>
+
+        <div class="form-group row" hidden>
+            <label class="control-label col-md-3" for="Fotografía">Fotografía</label>
+            <div class="col-md-9">
+                <input class="form-control text-box single-line" id="fotografia" type="text" name="SituacionActualFoto" />
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="control-label col-md-3"></label>
+            <div class="col-md-9">
+                <input type="submit" class="btn btn-success" value="Crear" />
+            </div>
+        </div>
+
+    </div>
+}
+
+<script type="text/javascript">
+    let imagenbase64 = "";
+    let foto = document.getElementById("fotografia");
+    function imagenAbase64(element) {
+        var file = element.files[0];
+        var reader = new FileReader();
+        reader.onloadend = function () {
+            imagebase64 = reader.result;
+            foto.value = imagebase64;
+        }
+        reader.readAsDataURL(file);
+    }
+</script>
+
