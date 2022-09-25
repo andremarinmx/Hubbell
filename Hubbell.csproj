@@ -239,6 +239,12 @@
     <Content Include="Views\NuestrosProductos\HotBoxFibra.cshtml" />
     <Content Include="Views\NuestrosProductos\NuestrosClientes.cshtml" />
     <Content Include="Views\NuestrosProductos\BoxPad.cshtml" />
+    <Content Include="Views\NuestrosProductos\Polymer.cshtml" />
+    <Content Include="Views\NuestrosProductos\CDRBoxes.cshtml" />
+    <Content Include="Views\NuestrosProductos\QuaziteBoxes.cshtml" />
+    <Content Include="Views\NuestrosProductos\PAD.cshtml" />
+    <Content Include="Views\NuestrosProductos\CorrugatedBoxes.cshtml" />
+    <Content Include="Views\NuestrosProductos\Covers.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

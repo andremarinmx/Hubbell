@@ -46,5 +46,43 @@ namespace Hubbell.Controllers
 
             return View();
         }
+
+        [HttpGet]
+        public ActionResult Polymer()
+        {
+
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult CDRBoxes()
+        {
+
+            return View();
+        }
+        [HttpGet]
+        public ActionResult QuaziteBoxes()
+        {
+
+            return View();
+        }
+        [HttpGet]
+        public ActionResult PAD()
+        {
+
+            return View();
+        }
+        [HttpGet]
+        public ActionResult CorrugatedBoxes()
+        {
+
+            return View();
+        }
+        [HttpGet]
+        public ActionResult Covers()
+        {
+
+            return View();
+        }
     }
 }
